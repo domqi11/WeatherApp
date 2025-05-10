@@ -23,4 +23,6 @@ DerivedData/
 
 # Environment files
 *.xcconfig
-!*.xcconfig.template
+
+# Template file is safe to include
+# !Debug.xcconfig.template
