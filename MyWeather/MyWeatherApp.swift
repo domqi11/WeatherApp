@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+//Location: CoreLocation
+//Table View
+//Custom Cell: Collection View
+//API/REQUEST TO GET DATA
+
 @main
 struct MyWeatherApp: App {
     var body: some Scene {
