@@ -72,8 +72,29 @@ class WeatherViewModel: ObservableObject {
         task.resume()
     }
     
-    func getWeatherIconUrl(icon: String) -> URL? {
-        return URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png")
+    func getLocalWeatherIconName(from iconCode: String) -> String {
+        // Map the OpenWeatherMap icon codes to your local asset names
+        switch iconCode {
+            case "01d", "01n": // Clear sky
+                return "sunny" // For day, or "moon" for night
+            case "02d", "02n", "03d", "03n", "04d", "04n": // Few clouds, scattered clouds, broken clouds
+                return "partly-cloudy"
+            case "09d", "09n", "10d", "10n": // Shower rain, rain
+                return "rain"
+            case "11d", "11n": // Thunderstorm
+                return "thunderstorm"
+            case "13d", "13n": // Snow
+                return "snow"
+            case "50d", "50n": // Mist
+                return "cloudy"
+            default:
+                return "partly-cloudy" // Default fallback
+        }
+    }
+
+    // For night icons specifically
+    func isNightIcon(iconCode: String) -> Bool {
+        return iconCode.contains("n")
     }
     
     func formatDate(_ timestamp: Int, format: String = "E, MMM d") -> String {

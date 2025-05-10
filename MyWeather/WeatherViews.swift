@@ -58,18 +58,11 @@ struct DailyForecastRow: View {
             
             Spacer()
             
-            // Weather icon
-            if let iconUrl = viewModel.getWeatherIconUrl(icon: iconCode) {
-                AsyncImage(url: iconUrl) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30)
-                } placeholder: {
-                    ProgressView()
-                        .frame(width: 30, height: 30)
-                }
-            }
+            // Weather icon - using local assets
+            Image(viewModel.getLocalWeatherIconName(from: iconCode))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 30, height: 30)
             
             Spacer()
             
@@ -95,18 +88,11 @@ struct WeatherHeaderView: View {
     
     var body: some View {
         VStack(spacing: 8) {
-            // Weather icon
-            if let iconUrl = viewModel.getWeatherIconUrl(icon: iconCode) {
-                AsyncImage(url: iconUrl) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
-                } placeholder: {
-                    ProgressView()
-                        .frame(width: 100, height: 100)
-                }
-            }
+            // Weather icon - using local assets
+            Image(viewModel.getLocalWeatherIconName(from: iconCode))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100, height: 100)
             
             // Weather condition
             Text(condition)
