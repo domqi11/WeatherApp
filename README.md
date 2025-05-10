@@ -2,8 +2,8 @@
 
 A sleek, modern weather application for iOS built with SwiftUI that provides real-time weather information.
 
-![Weather App Screenshot](![image](MyWeather/Assets.xcassets/screenshot/WEATHER-APP.png)
-)
+[![Weather App Screenshot](![image](MyWeather/Assets.xcassets/screenshot/WEATHER-APP.png)
+)](https://github.com/domqi11/WeatherApp/raw/main/MyWeather/Assets.xcassets/screenshot/WEATHER-APP.png)
 
 ## Features
 
